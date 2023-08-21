@@ -1,0 +1,111 @@
+<div class="container m-3">
+  <div class="row">
+    <div class="col">
+      <label for="" class="name">المورد متاح إلى</label>
+
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        [formControl]="parentForm.availabilityOfResources"
+      >
+        <option
+          *ngFor="let _ of [].constructor(12); let i = index"
+          [value]="i + 1"
+        >
+          {{ i + 1 }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row">
+    <label for="" class="name">وقت المورد</label>
+    <div class="col-3">
+      <input type="checkbox" value="3" [formControl]="parentForm.resourceTime" />
+      <label for="">حجز خلال اليوم</label>
+    </div>
+    <div class="col-3">
+      <input type="checkbox" value="4" [formControl]="parentForm.resourceTime" />
+      <label for="">حجز خلال اليوم</label>
+    </div>
+
+    <div class="col-6">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <button type="button" class="btn btn-dark btn-sm" id="minus-btn">
+              _
+            </button>
+          </div>
+
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            [formControl]="parentForm.resourceTime"
+          >
+            <option
+              *ngFor="let _ of [].constructor(12); let i = index"
+              [value]="i + 1"
+            >
+              {{ i + 1 }}
+            </option>
+          </select>
+          <div class="input-group-prepend">
+            <button type="button" class="btn btn-dark btn-sm" id="plus-btn">
+              +
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <p class="ms-auto">الحجز المتعدد</p>
+    <div class="col-3">
+      <input 
+      [formControl]="parentForm.multipleBooking"
+      type="checkbox"
+      value="5"
+
+       />
+      
+      <label for="">حجز واحد فقط</label>
+    </div>
+    <div class="col-4">
+      <input 
+      [formControl]="parentForm.multipleBooking"
+
+      type="checkbox"
+      value="6"
+
+       />
+      <label for="">حجز اكثر من شخص لنفس الموعد</label>
+    </div>
+
+    <div class="col-5">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="input-group mb-3">
+
+          <select
+          class="form-select"
+          aria-label="Default select example"
+          [formControl]="parentForm.multipleBooking"
+        >
+          <option
+            *ngFor="let _ of [].constructor(12); let i = index"
+            [value]="i + 1"
+          >
+            {{ i + 1 }}
+          </option>
+        </select>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+<form [formGroup]="resourceForm" (ngSubmit)="submitResourceForm()">
+  <app-resource-name [nameControl]="nameControl"></app-resource-name>
+  <app-choose-resource-type [resourceTypeControl]="resourceTypeControl"></app-choose-resource-type>
+  <app-availability-of-resource
+    [parentForm]="$any(resourceForm.controls)"
+  ></app-availability-of-resource>
+
+  <button type="submit"> save</button>
+</form>
+
